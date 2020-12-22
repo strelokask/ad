@@ -1,3 +1,4 @@
+using AD.WebApi.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,6 +43,10 @@ namespace AD.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region custom middleware
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+            #endregion
 
             app.UseHttpsRedirection();
 
