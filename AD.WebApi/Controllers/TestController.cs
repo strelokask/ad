@@ -24,6 +24,10 @@ namespace AD.WebApi.Controllers
         [HttpGet]
         public AppSettingsOption Get()
         {
+            _logger.LogInformation("LogInformation");
+            _logger.LogWarning("LogWarning");
+            _logger.LogError("LogError");
+         
             return (_appSettings);
         }
     }
