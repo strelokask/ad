@@ -27,6 +27,10 @@ namespace AD.WebApi
         {
             services.AddControllers();
 
+            #region AppSettings
+            services.Configure<AppSettingsOption>(Configuration.GetSection("AppSettings"));
+            #endregion
+
             services.AddSwaggerGen();
         }
 
