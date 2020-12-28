@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AD.DAL\AD.DAL.csproj" />
-    <ProjectReference Include="..\AD.Domain\AD.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,9 @@
 ﻿using AD.DAL.Services.Base;
 using AD.DAL.Services.Interfaces;
+using AD.Domain.Settings.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,18 +12,16 @@ namespace AD.DAL.Services
 {
     public class AdService : LoggingService, IAdService
     {
-        private readonly IConfiguration _config;
+        private readonly AdOptions _adOptions;
 
-        public AdService(ILogger<AdService> logger, IConfiguration config) : base(logger)
+        public AdService(ILogger<AdService> logger, IOptions<AdOptions> options) : base(logger)
         {
-            _config = config;
+            _adOptions = options.Value;
         }
 
         public void GetAdUsers()
         {
-            for (int i = 0; i < _config.GetValue<int>("LoopTimes"); i++) {
-                _logger.LogInformation("Run number {runNumber}", i);
-            }
+            _logger.LogInformation("Domain value {domain}", _adOptions.Domain);
         }
     }
 }
