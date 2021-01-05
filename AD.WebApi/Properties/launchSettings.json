@@ -10,12 +10,12 @@
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/users",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "commandName": "IISExpress",
+        "launchBrowser": true,
+        "launchUrl": "swagger/v.1.0/swagger.json",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
     },
     "AD.WebApi": {
       "commandName": "Project",
