@@ -1,3 +1,9 @@
+using AD.DAL.Services;
+using AD.DAL.Services.Base;
+using AD.DAL.Services.Interfaces;
+using AD.Domain.Profiles;
+using AD.Domain.Settings.Options;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +32,12 @@ namespace AD.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton(x => x.GetService<ILoggerFactory>().CreateLogger(this.GetType().Namespace));
+            services.Configure<AdOptions>(Configuration.GetSection(AdOptions.AD));
+
+            services.AddAutoMapper(typeof(AdUserProfile));
+            services.AddScoped<IAdService, AdService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -61,7 +61,7 @@ namespace TestApp
             return Host.CreateDefaultBuilder()
                     .ConfigureServices((context, services) =>
                     {
-                        services.AddSingleton<LoggingService>();
+                        services.AddScoped<LoggingService>();
                         services.Configure<AdOptions>(configuration.GetSection(AdOptions.AD));
 
                         services.AddAutoMapper(typeof(AdUserProfile));

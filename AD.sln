@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.DAL", "AD.DAL\AD.DAL.csproj", "{96DE5545-C0FA-4797-A94C-09D9B8C90822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Domain", "AD.Domain\AD.Domain.csproj", "{24A971F4-1F1F-4721-AD4F-3DF5BEA21ABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Domain", "AD.Domain\AD.Domain.csproj", "{24A971F4-1F1F-4721-AD4F-3DF5BEA21ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
